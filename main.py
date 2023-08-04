@@ -130,7 +130,7 @@ def handle_items():
                 return jsonify({'error': str(e)}), 500
         else:
             return jsonify({'error': 'Invalid item'}), 400
-#----------------------------------------------------------------
+
 # Rutas para las operaciones CRUD
 @app.route('/users', methods=['GET'])
 def handle_users():
@@ -152,11 +152,6 @@ def handle_users():
             users.append(u_data)
 
         return jsonify(users)
-
-
-#----------------------------------------------------------------
-
-
 
 @app.route('/items/<int:index>', methods=['DELETE', 'PUT'])
 def handle_item_by_index(index):
